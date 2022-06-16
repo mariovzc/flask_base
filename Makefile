@@ -18,7 +18,7 @@ clean-build:
 clean: clean-pyc clean-build
 
 launch:
-	FLASK_APP=server.py FLASK_DEBUG=1 python3.7 -m flask run --host=0.0.0.0 --port=8000
+	FLASK_APP=server.py FLASK_DEBUG=1 python -m flask run --host=0.0.0.0 --port=8000
 
 build: clean
 	docker build -t $(PACKAGE_NAME) -f Dockerfile --build-arg module_folder=$(PROJECT_FOLDER) --build-arg package_name=$(PACKAGE_NAME) $(GIT_DIR)
